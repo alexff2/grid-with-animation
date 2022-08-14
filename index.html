@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Palanquin&family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Space Cream</title>
+</head>
+<body>
+  <header>
+    <img src="./img/logo 1.svg">
+    <h1>SPACE CREAM</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, pharetra est in, sagittis lorem.elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, pharetra est in, sagittis lorem. </p>
+  </header>
+
+  <div class="container">
+    <main>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a rhoncus leo. Donec at scelerisque magna. Nullam vitae neque sit amet erat dignissim cursus ac ac lectus. Aliquam erat volutpat. Praesent at quam aliquet, </p>
+  
+      <div class="cards"></div>
+  
+    </main>
+    <footer>fale conosco no instagram <strong>@space_cream</strong></footer>
+  </div>
+
+  <script>
+    //Array containing image url and description
+    const dataCards = [
+      {src: './img/sorvete1.png', description: 'Paletas'},
+      {src: './img/sorvete2.png', description: 'Shakes'},
+      {src: './img/sorvete3.png', description: 'Massas'},
+      {src: './img/sorvete4.png', description: 'Picolés'},
+      {src: './img/sorvete1.png', description: 'Paletas'},
+      {src: './img/sorvete4.png', description: 'Picolés'},
+    ]
+
+    // Capturing DIV where the cards in the image will be inserted
+    const cards = document.querySelector('.cards')
+
+    //Function that traverses image array, and renders in DIV cards
+    dataCards.forEach(card => {
+      const divCard = document.createElement('div')
+      const imgCard = document.createElement('img')
+      const spanCard = document.createElement('span')
+  
+      imgCard.setAttribute('src', card.src)
+      spanCard.innerText = card.description
+  
+      divCard.appendChild(imgCard)
+      divCard.appendChild(spanCard)
+      cards.appendChild(divCard)
+    })
+
+  </script>
+</body>
+</html>

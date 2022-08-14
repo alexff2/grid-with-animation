@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #EFF1FF;
+  --bg-secondary: #8E9AAF;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: 'Palanquin', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #23053A;
+}
+
+/* CSS for Header*/
+header {
+  background-color: var(--bg-secondary);
+  height: 27.9rem;
+  text-align: center;
+}
+
+header img {
+  margin: 3.2rem 0;
+  width: 17.8rem;
+}
+
+header h1 {
+  width: 100%;
+  font-family: 'Staatliches', cursive;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  padding: 8px;
+  background-color: #CBC0D3;
+  color: #FFF;
+}
+
+header p {
+  display: none;
+}
+
+.container {
+  max-width: 38.4rem;
+  padding: 0 3.2rem 3.2rem;
+  margin: auto;
+}
+
+/* CSS for main */
+main p {
+  text-align: center;
+  color: #23053A;
+  padding: 20px 0 50px 0;
+}
+
+main .cards {
+  display: grid;
+  gap: 3.2rem;
+}
+
+main .cards div {
+  position: relative;
+  max-width: 320px;
+  animation: downtop 700ms;
+}
+
+main .cards div img {
+  width: 100%;
+}
+
+main .cards div span {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.2rem;
+  height: 3.5rem;
+  border-radius: 20px;
+  background: #FEEAFA;
+  color: #4A4E69;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Staatliches', cursive;
+  
+  animation: topdown 700ms 350ms backwards;
+}
+
+/* CSS for footer */
+footer {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  text-align: center;
+  color: #4A4E69;
+  padding: 3rem;
+  display: none;
+}
+
+/* animation keyframe moving element from top to bottom */
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* animation keyframe moving element from bottom to top */
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* media query for screens over 700px */
+@media(min-width: 704px) {
+  .container {
+    max-width: 100rem;
+  }
+  
+  main .cards {
+    grid-template-areas: "A B" "D C" "E F";
+    justify-content: center;
+  }
+
+  main .cards div:nth-child(1) {
+    grid-area: A;
+  }
+  main .cards div:nth-child(2) {
+    grid-area: B;
+  }
+  main .cards div:nth-child(3) {
+    grid-area: C;
+  }
+  main .cards div:nth-child(4) {
+    grid-area: D;
+    margin-top: -19rem;
+  }
+  main .cards div:nth-child(5) {
+    grid-area: E;
+  }
+  main .cards div:nth-child(6) {
+    grid-area: F;
+  }
+  
+}
+
+/* media query for screens over 1140px */
+@media(min-width: 1140px) {
+  header {
+    position: fixed;
+    width: 37.7rem;
+    height: 100%;
+  }
+
+  header p {
+    display: block;
+    margin: 3rem auto 0;
+    width: 275px;
+    text-align: center;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    margin-left: 37.7rem;
+    padding: 0;
+    max-width: 100%;
+    height: 100vh;
+  }
+
+  main p {
+    display: none;
+  }
+  
+  main .cards {
+    grid-template-areas: "A B E" "D C F";  
+  }
+
+  main .cards div {
+    width: 220px;
+  }
+  main .cards div:nth-child(4) {
+    margin-top: -14rem;
+  }
+  main .cards div:nth-child(6) {
+    margin-top: -14rem;
+  }
+  footer {
+    display: block;
+  }
+}
